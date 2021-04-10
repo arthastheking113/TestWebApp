@@ -1,0 +1,62 @@
+
+<div class="row" style="background-color: grey;">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-3">Contact Book</h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col"></div>
+    <div class="col-4">
+        <app-contact-form></app-contact-form>
+    </div>
+    <div class="col"></div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col text-center">
+        <h3>List of Contact</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Personal Email</th>
+                    <th>Work Email</th>
+                    <th>Personal Phone Number</th>
+                    <th>Work Phone Number</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Company</th>
+                    <th>Fax Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td>{{pd.firstName}}</td>
+                    <td>{{pd.lastName}}</td>
+                    <td>{{pd.personalEmail}}</td>
+                    <td>{{pd.workEmail}}</td>
+                    <td>{{pd.personalPhoneNumber}}</td>
+                    <td>{{pd.phoneNumber}}</td>
+                    <td>{{pd.adress1}}</td>
+                    <td>{{pd.adress2}}</td>
+                    <td>{{pd.city}}</td>
+                    <td>{{pd.state}}</td>
+                    <td>{{pd.zipCode}}</td>
+                    <td>{{pd.company}}</td>
+                    <td>{{pd.faxNumber}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

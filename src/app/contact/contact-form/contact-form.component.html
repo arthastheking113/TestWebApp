@@ -1,0 +1,110 @@
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="id" [value]="service.formData.id">
+    <div class="row">
+       
+        <div class="form-group col-6" >
+            <label>First Name</label>
+            <input type="text" class="form-control"placeholder="First Name"
+            name="firstName" #firstName="ngModel" [(ngModel)]="service.formData.firstName" 
+            required minlength="2" [class.invalid]="firstName.invalid && firstName.touched"  maxlength="20">
+        </div>
+        <div class="form-group col-6" >
+            <label>Last Name</label>
+            <input type="text" class="form-control"placeholder="Last Name"
+            name="lastName" #lastName="ngModel" [(ngModel)]="service.formData.lastName" required
+            minlength="2" [class.invalid]="lastName.invalid && lastName.touched"  maxlength="20" >
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>Personal Email</label>
+            <input type="text" class="form-control"placeholder="Personal Email"
+            name="personalEmail" #personalEmail="ngModel" [(ngModel)]="service.formData.personalEmail" required>
+        </div>
+        
+        <div class="form-group col-6" >
+            <label>Work Email</label>
+            <input type="text" class="form-control"placeholder="Work Email"
+            name="workEmail" #workEmail="ngModel" [(ngModel)]="service.formData.workEmail">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>Work Phone Number</label>
+            <input type="text" class="form-control"placeholder="Work Phone Number"
+            name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber">
+        </div>
+        
+        <div class="form-group col-6" >
+            <label>Personal Phone Number</label>
+            <input type="text" class="form-control"placeholder="Personal Phone Number"
+            name="personalPhoneNumber" #personalPhoneNumber="ngModel" 
+            [(ngModel)]="service.formData.personalPhoneNumber" required>
+        </div>
+    </div>
+        
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>Address 1</label>
+            <input type="text" class="form-control"placeholder="Address 1"
+            name="adress1" #adress1="ngModel" [(ngModel)]="service.formData.adress1">
+        </div>
+        
+        <div class="form-group col-6" >
+            <label>Address 2</label>
+            <input type="text" class="form-control"placeholder="Address 2"
+            name="adress2" #adress2="ngModel" [(ngModel)]="service.formData.adress2">
+        </div>
+    </div>   
+    
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>City</label>
+            <input type="text" class="form-control"placeholder="City"
+            name="city" #city="ngModel" [(ngModel)]="service.formData.city">
+        </div>
+
+        <div class="form-group col-6" >
+            <label>State</label>
+            <input type="text" class="form-control"placeholder="State"
+            name="state" #state="ngModel" [(ngModel)]="service.formData.state">
+        </div>
+    </div>    
+
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>Zip Code</label>
+            <input type="text" class="form-control"placeholder="Zip Code"
+            name="zipCode" #zipCode="ngModel" [(ngModel)]="service.formData.zipCode">
+        </div>
+
+        <div class="form-group col-6" >
+            <label>Company</label>
+            <input type="text" class="form-control"placeholder="Company"
+            name="company" #company="ngModel" [(ngModel)]="service.formData.company">
+        </div>
+    </div>    
+
+    <div class="row">
+        <div class="form-group col-6" >
+            <label>FaxNumber</label>
+            <input type="text" class="form-control"placeholder="Fax Number"
+            name="faxNumber" #faxNumber="ngModel" [(ngModel)]="service.formData.faxNumber">
+        </div>
+
+        <div class="form-group col-6" >
+            <label>User Id</label>
+            <input type="text" class="form-control"placeholder="User Id"
+            name="userId" #userId="ngModel" [(ngModel)]="service.formData.userId">
+        </div>
+    </div>   
+  <br>
+    <button class="btn btn-info btn-lg form-control" [disabled]="form.invalid"  type="submit">Add to Contact</button>   
+   
+        
+       
+
+    
+    
+
+</form>
