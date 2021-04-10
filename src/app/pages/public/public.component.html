@@ -1,10 +1,23 @@
 <div class="jumbotron mt-4">
-	<h1 class="display-4">Public Page</h1>
-	<p>Everyone can view this page
-	</p>
+	<div class="row">
+        <div class="col text-center">
+            <h1> Welcome To Online Contact Book</h1>
+            <p>You can manage, view, create, edit, and delete your contact online and free in our website.</p>
+        </div>
+    </div>
 
-	<hr class="my-4">
-	<p>Welcome to all users</p>
+    <div class="row">
+        <div class="col text-center">
+			<a class="btn btn-secondary text-white" style="border-radius:0;border:none;background-color:#1cd5db; margin-right: 1%;"
+			[routerLink]="['login']" 
+		routerLinkActive="active">
+		<i class="fas fa-sign-in-alt"></i> Login To Add Contact</a>
+		
+		<a class="btn btn-secondary text-white" style="border-radius:0;border:none;background-color:#1cd5db"
+		[routerLink]="['register']" 
+		routerLinkActive="active">
+		<i class="fas fa-user-plus"></i> Register a New Account</a>
 
-	<a class="btn btn-success" routerLink=""><i class="fas fa-home"></i> Home</a>
+        </div>
+    </div>
 </div>

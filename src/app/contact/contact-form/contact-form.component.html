@@ -1,6 +1,6 @@
 <form novalidate #form="ngForm" (submit)="onSubmit(form)">
     <input type="hidden" name="id" [value]="service.formData.id">
-    <div class="row">
+    <div class="row col-md-4 offset-md-4">
        
         <div class="form-group col-6" >
             <label>First Name</label>
@@ -15,7 +15,7 @@
             minlength="2" [class.invalid]="lastName.invalid && lastName.touched"  maxlength="20" >
         </div>
     </div>
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>Personal Email</label>
             <input type="text" class="form-control"placeholder="Personal Email"
@@ -28,7 +28,7 @@
             name="workEmail" #workEmail="ngModel" [(ngModel)]="service.formData.workEmail">
         </div>
     </div>
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>Work Phone Number</label>
             <input type="text" class="form-control"placeholder="Work Phone Number"
@@ -43,7 +43,7 @@
         </div>
     </div>
         
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>Address 1</label>
             <input type="text" class="form-control"placeholder="Address 1"
@@ -57,7 +57,7 @@
         </div>
     </div>   
     
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>City</label>
             <input type="text" class="form-control"placeholder="City"
@@ -71,7 +71,7 @@
         </div>
     </div>    
 
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>Zip Code</label>
             <input type="text" class="form-control"placeholder="Zip Code"
@@ -85,7 +85,7 @@
         </div>
     </div>    
 
-    <div class="row">
+    <div class="row  col-md-4 offset-md-4">
         <div class="form-group col-6" >
             <label>FaxNumber</label>
             <input type="text" class="form-control"placeholder="Fax Number"
@@ -98,8 +98,10 @@
             name="userId" #userId="ngModel" [(ngModel)]="service.formData.userId">
         </div>
     </div>   
-  <br>
-    <button class="btn btn-info btn-lg form-control" [disabled]="form.invalid"  type="submit">Add to Contact</button>   
+    <br>
+    <div class="row  col-md-4 offset-md-4">
+        <button class="btn btn-info btn-lg form-control" [disabled]="form.invalid"  type="submit">Add to Contact</button>   
+    </div>   
    
         
        

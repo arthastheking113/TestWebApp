@@ -1,6 +1,17 @@
 <div class="row">
-	<div class="col-md-6 offset-md-3 mt-4">
-		<h3>Register New Employer</h3>
+	<div class="col-md-2 offset-md-5 mt-4">
+		<div class="row  text-center" >
+			<div class="col" style="border-right:1px solid">
+				<a [routerLink]="['/login']" 
+				routerLinkActive="active"><h3>Login</h3></a>
+			</div>
+			<div class="col">
+				<a [routerLink]="['/register']" 
+				routerLinkActive="active"><h3>Register</h3></a>
+				
+			</div>
+		</div>
+		<hr>
 		<form #f="ngForm" (ngSubmit)="onSubmit()">
 			<div class="form-group">
 				<label for="registerEmail">Email</label>
@@ -32,7 +43,10 @@
 
 				</select>
 			</div>
-			<button type="submit" [disabled]="f.invalid" class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
+			<br>
+			<button type="submit" 
+			[disabled]="f.invalid" 
+			class="btn btn-primary form-control">Register <i class="fas fa-sign-in-alt"></i></button>
 		</form>
 	</div>
 </div>

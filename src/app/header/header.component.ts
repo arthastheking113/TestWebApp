@@ -26,4 +26,13 @@ export class HeaderComponent implements OnInit {
   isManager(): boolean {
     return this.authService.currentUser.role == 'Manager' ? true : false;
   }
+  isExpanded = false;
+
+  collapse() {
+    this.isExpanded = false;
+  }
+
+  toggle() {
+    this.isExpanded = !this.isExpanded;
+  }
 }

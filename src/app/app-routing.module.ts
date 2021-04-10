@@ -6,7 +6,8 @@ import { ManagerComponent } from './pages/manager/manager.component';
 import { PublicComponent } from './pages/public/public.component';
 
 const routes: Routes = [
-  { path: '', component: ContactComponent },
+  { path: '', component: PublicComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'manager', component: ManagerComponent },
   { path: 'public', component: PublicComponent },
