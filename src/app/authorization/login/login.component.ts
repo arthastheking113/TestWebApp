@@ -18,14 +18,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(f: NgForm) {
+  onSubmit(form: NgForm) {
     this.alertService.info('Check login information');
     this.progressService.startLoading();
 
     const loginObserver = {
       next: (x: any) => {
         this.progressService.setSuccess();
-        this.alertService.success('Welcome back ' + x.username);
+        this.alertService.success('Welcome back ' + x.firstName + ' '  + x.lastName);
         this.progressService.completeLoading();
       },
       error: (err: any) => {
@@ -36,6 +36,6 @@ export class LoginComponent implements OnInit {
       },
     };
 
-    this.authService.login(f.value).subscribe(loginObserver);
+    this.authService.login(form.value).subscribe(loginObserver);
   }
 }

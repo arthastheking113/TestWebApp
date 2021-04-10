@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   developerType: string[] = ['Developer', 'Designer'];
 
   model: any = {
+    firstName:null,
+    lastName:null,
     email: null,
     password: null,
     role: 'Administrator',
