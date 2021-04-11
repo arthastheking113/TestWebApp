@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit {
       },
       error: (err: any) => {
         this.progressService.setFailure();
+       
         console.log(err);
-        this.alertService.danger('Unable to Login');
+        this.alertService.danger(err.error);
         this.progressService.completeLoading();
       },
     };
 
     this.authService.login(form.value).subscribe(loginObserver);
+
   }
 }

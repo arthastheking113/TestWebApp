@@ -36,7 +36,7 @@
 					 routerLinkActive="router-link-active">
 					 <i class="fas fa-home"></i> Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item" *ngIf="isLogined()">
 					<a class="nav-link" [routerLink]="['contact']"
 					 routerLinkActive="router-link-active">
 					 <i class="fas fa-phone"></i> Contact List</a>

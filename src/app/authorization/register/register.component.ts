@@ -18,8 +18,7 @@ export class RegisterComponent implements OnInit {
     lastName:null,
     email: null,
     password: null,
-    role: 'Administrator',
-    jobtitle: 'Developer',
+    confirmpassword:null
     //claim: 'Developer',
   };
   constructor(
@@ -33,21 +32,29 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.alertService.info('Creating new user');
     this.progressService.startLoading();
-
-    const registerObserver = {
-      next: (x: any) => {
-        this.progressService.setSuccess();
-        this.alertService.success('Account Created');
-        this.progressService.completeLoading();
-      },
-      error: (err: any) => {
-        this.progressService.setFailure();
-        this.alertService.danger(err.error.errors[0].description);
-        this.progressService.completeLoading();
-      },
-    };
-
-    this.authService.register(this.model).subscribe(registerObserver);
+    if(this.model.password == this.model.confirmpassword){
+      const registerObserver = {
+        next: (x: any) => {
+          this.progressService.setSuccess();
+          this.alertService.success('Account Created');
+          this.progressService.completeLoading();
+        },
+        error: (err: any) => {
+          this.progressService.setFailure();
+          this.alertService.danger(err.error.errors[0].description);
+          this.progressService.completeLoading();
+        },
+      };
+  
+      this.authService.register(this.model).subscribe(registerObserver);
+    }
+    else{
+      this.progressService.setFailure();
+      this.alertService.danger('Password and confirm password not match');
+      this.progressService.completeLoading();
+    }
+  
+    
   }
 
   roleChange(value: any) {

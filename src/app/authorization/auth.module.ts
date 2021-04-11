@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthLinksComponent } from './auth-links/auth-links.component';
 import { AuthButtonsComponent } from './auth-buttons/auth-buttons.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
+import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
     AuthLinksComponent,
     AuthButtonsComponent,
     ConfirmEmailComponent,
+    RegistersuccessComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, FormsModule, HttpClientModule],
   exports: [

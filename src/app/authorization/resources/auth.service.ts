@@ -7,9 +7,19 @@ import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ProgressbarService } from 'src/app/shared/services/progressbar.service';
 import { AlertService } from 'ngx-alerts';
+import { Routes, RouterModule, Router } from '@angular/router';
+
+
+const routes: Routes = [
+  { path: '', redirectTo: '/AppComponent', pathMatch: 'full' },
+  { path: 'contact',  redirectTo: '/contact' },
+
+];
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class AuthService {
   baseUrl: string = environment.baseUrl;
   isLoggedIn:boolean;
@@ -22,9 +32,11 @@ export class AuthService {
     role: '',
     jobtitle: '',
   };
+  
   constructor(private http: HttpClient,
     private progressService: ProgressbarService,
-    private alertService: AlertService) {}
+    private alertService: AlertService,
+    private router: Router) {}
 
   login(model: any): Observable<IUser> {
     return this.http.post(this.baseUrl + 'Identity/login', model).pipe(
@@ -38,7 +50,7 @@ export class AuthService {
         this.currentUser.role = decodedToken.role;
 
         localStorage.setItem('token', response.token);
-
+        this.router.navigate(['/contact']);
         return this.currentUser;
       })
     );
@@ -48,7 +60,9 @@ export class AuthService {
     const token: any = localStorage.getItem('token');
     return !this.helper.isTokenExpired(token);
   }
-
+  isLogined(): boolean {
+    return this.isLoggedIn ? true : false;
+  }
   logout() {
     this.currentUser = {
       firstName:'',
@@ -62,10 +76,13 @@ export class AuthService {
     this.alertService.success('Log out successfully!');
     this.progressService.completeLoading();
     localStorage.removeItem('token');
+    this.router.navigate(['']);
   }
 
   register(model: any) {
+    this.router.navigate(['/registersuccess']);
     return this.http.post(this.baseUrl + 'Identity/register', model);
+    
   }
 
   confirmEmail(model: any) {

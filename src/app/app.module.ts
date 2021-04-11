@@ -18,7 +18,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthModule } from './authorization/auth.module';
 import { AlertModule } from 'ngx-alerts';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +28,7 @@ import { AlertModule } from 'ngx-alerts';
     ContactComponent,
     HeaderComponent,
     ContactFormComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
