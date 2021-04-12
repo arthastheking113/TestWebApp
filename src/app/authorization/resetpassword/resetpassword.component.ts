@@ -1,45 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ProgressbarService } from 'src/app/shared/services/progressbar.service';
 import { AlertService } from 'ngx-alerts';
 import { AuthService } from '../resources/auth.service';
 import { Routes, RouterModule, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-resetpassword',
+  templateUrl: './resetpassword.component.html',
+  styles: [
+  ]
 })
-export class RegisterComponent implements OnInit {
-  roleOptions: string[] = ['Administrator', 'Manager'];
-  developerType: string[] = ['Developer', 'Designer'];
+export class ResetpasswordComponent implements OnInit {
 
-  model: any = {
-    firstName:null,
-    lastName:null,
+  token: string | any;
+  model:any = {
     email: null,
     password: null,
+    token:null,
     confirmpassword:null
-    //claim: 'Developer',
   };
   constructor(
+    private route: ActivatedRoute,
     private progressService: ProgressbarService,
     private alertService: AlertService,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getToken();
+  }
+  getToken(){
+    this.token = this.route.snapshot.queryParamMap.get('token');
+ 
+  }
 
   onSubmit() {
-    this.alertService.info('Creating new user');
+    this.alertService.info('Reseting your password');
     this.progressService.startLoading();
     if(this.model.password == this.model.confirmpassword){
-      const registerObserver = {
+      const resetObserver = {
         next: (x: any) => {
           this.progressService.setSuccess();
-          this.alertService.success('Account Created');
+          this.alertService.success('Your password successfully is reset');
           this.progressService.completeLoading();
-          this.router.navigate(['/registersuccess']);
+          localStorage.removeItem('token');
+          this.router.navigate(['/resetpasswordsuccess']);
         },
         error: (err: any) => {
           this.progressService.setFailure();
@@ -48,22 +54,13 @@ export class RegisterComponent implements OnInit {
         },
       };
   
-      this.authService.register(this.model).subscribe(registerObserver);
+      this.authService.resetpassword(this.model).subscribe();
     }
     else{
       this.progressService.setFailure();
       this.alertService.danger('Password and confirm password not match');
       this.progressService.completeLoading();
     }
-  
-    
-  }
 
-  roleChange(value: any) {
-    this.model.role = value;
-  }
-
-  claimChange(value: any) {
-    this.model.claim = value;
   }
 }

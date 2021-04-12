@@ -33,7 +33,7 @@ export class AuthService {
     jobtitle: '',
   };
   
-  constructor(private http: HttpClient,
+  constructor(public http: HttpClient,
     private progressService: ProgressbarService,
     private alertService: AlertService,
     private router: Router) {}
@@ -54,6 +54,20 @@ export class AuthService {
         return this.currentUser;
       })
     );
+  }
+
+  retoredpassword(model: any){
+   
+    return this.http.post(this.baseUrl + 'Identity/forgotpassword', model)
+    .pipe(
+      map((response: any) => {
+        localStorage.removeItem('token');
+        localStorage.setItem('token', response.token);
+      }));
+  }
+
+  resetpassword(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/resetpassword', model);
   }
 
   loggedIn(): boolean {
@@ -80,7 +94,7 @@ export class AuthService {
   }
 
   register(model: any) {
-    this.router.navigate(['/registersuccess']);
+  
     return this.http.post(this.baseUrl + 'Identity/register', model);
     
   }

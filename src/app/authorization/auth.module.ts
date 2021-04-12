@@ -10,6 +10,10 @@ import { AuthLinksComponent } from './auth-links/auth-links.component';
 import { AuthButtonsComponent } from './auth-buttons/auth-buttons.component';
 import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ForgotpasswordcheckemailComponent } from './forgotpasswordcheckemail/forgotpasswordcheckemail.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ResetpasswordsuccessComponent } from './resetpasswordsuccess/resetpasswordsuccess.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { RegistersuccessComponent } from './registersuccess/registersuccess.comp
     AuthButtonsComponent,
     ConfirmEmailComponent,
     RegistersuccessComponent,
+    ForgotpasswordComponent,
+    ForgotpasswordcheckemailComponent,
+    ResetpasswordComponent,
+    ResetpasswordsuccessComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, FormsModule, HttpClientModule],
   exports: [

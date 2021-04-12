@@ -6,11 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
+
 export class RegistersuccessComponent implements OnInit {
 
+  model: any = {
+    token: null
+    //claim: 'Developer',
+  };
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
