@@ -1,0 +1,20 @@
+<br><br><br>
+<div class="row">
+    <div class="col-4 offset-md-4  text-center">
+        <h2>Resend Email Confirmation</h2>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-2 offset-md-5  text-center">
+        <form #form="ngForm" (ngSubmit)="onSubmit()">
+            <input type="email" name="email" #email="ngModel" 
+            [(ngModel)]="model.email"
+            placeholder="Please enter your email" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary form-control">
+                Resend Confirmation Email
+            </button>
+        </form>
+    </div>
+</div>

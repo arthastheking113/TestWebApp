@@ -92,11 +92,12 @@ export class AuthService {
     localStorage.removeItem('token');
     this.router.navigate(['']);
   }
-
-  register(model: any) {
   
+  resendemailconfirmation(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/resentemailconfirmation', model);
+  }
+  register(model: any) {
     return this.http.post(this.baseUrl + 'Identity/register', model);
-    
   }
 
   confirmEmail(model: any) {

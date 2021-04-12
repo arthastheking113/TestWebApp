@@ -7,6 +7,7 @@ import { PublicComponent } from './pages/public/public.component';
 import { RegistersuccessComponent } from './authorization/registersuccess/registersuccess.component';
 import { ResetpasswordComponent } from './authorization/resetpassword/resetpassword.component';
 
+
 const routes: Routes = [
   { path: '', component: PublicComponent },
   { path: 'contact', component: ContactComponent },
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'manager', component: ManagerComponent },
   { path: 'public', component: PublicComponent },
   { path: 'registersuccess', component: RegistersuccessComponent },
-  { path: 'resetpassword', component: ResetpasswordComponent }
+  { path: 'resetpassword', component: ResetpasswordComponent },
 
 ];
 

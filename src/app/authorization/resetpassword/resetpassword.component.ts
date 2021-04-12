@@ -28,7 +28,6 @@ export class ResetpasswordComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getToken();
   }
   getToken(){
     this.token = this.route.snapshot.queryParamMap.get('token');
@@ -38,6 +37,7 @@ export class ResetpasswordComponent implements OnInit {
   onSubmit() {
     this.alertService.info('Reseting your password');
     this.progressService.startLoading();
+    this.model.token = this.route.snapshot.queryParamMap.get('token');
     if(this.model.password == this.model.confirmpassword){
       const resetObserver = {
         next: (x: any) => {
@@ -54,7 +54,7 @@ export class ResetpasswordComponent implements OnInit {
         },
       };
   
-      this.authService.resetpassword(this.model).subscribe();
+      this.authService.resetpassword(this.model).subscribe(resetObserver);
     }
     else{
       this.progressService.setFailure();

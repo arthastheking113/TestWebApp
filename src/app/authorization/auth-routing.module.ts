@@ -7,6 +7,8 @@ import { ForgotpasswordcheckemailComponent } from './forgotpasswordcheckemail/fo
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
+import { ResendemailconfirmationComponent } from './resendemailconfirmation/resendemailconfirmation.component';
+import { ResendemailconfirmationsuccessComponent } from './resendemailconfirmationsuccess/resendemailconfirmationsuccess.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ResetpasswordsuccessComponent } from './resetpasswordsuccess/resetpasswordsuccess.component';
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'forgotpasswordcheckemail', component: ForgotpasswordcheckemailComponent },
   { path: 'resetpassword', component: ResetpasswordComponent },
   { path: 'resetpasswordsuccess', component: ResetpasswordsuccessComponent },
+  { path: 'resendemailconfirmation', component: ResendemailconfirmationComponent },
+  { path: 'resendemailconfirmationsuccess', component: ResendemailconfirmationsuccessComponent },
 ];
 
 @NgModule({

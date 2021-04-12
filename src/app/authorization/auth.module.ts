@@ -14,6 +14,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ForgotpasswordcheckemailComponent } from './forgotpasswordcheckemail/forgotpasswordcheckemail.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ResetpasswordsuccessComponent } from './resetpasswordsuccess/resetpasswordsuccess.component';
+import { ResendemailconfirmationComponent } from './resendemailconfirmation/resendemailconfirmation.component';
+import { ResendemailconfirmationsuccessComponent } from './resendemailconfirmationsuccess/resendemailconfirmationsuccess.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ResetpasswordsuccessComponent } from './resetpasswordsuccess/resetpassw
     ForgotpasswordcheckemailComponent,
     ResetpasswordComponent,
     ResetpasswordsuccessComponent,
+    ResendemailconfirmationComponent,
+    ResendemailconfirmationsuccessComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, FormsModule, HttpClientModule],
   exports: [
