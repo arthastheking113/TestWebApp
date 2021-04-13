@@ -16,6 +16,11 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ResetpasswordsuccessComponent } from './resetpasswordsuccess/resetpasswordsuccess.component';
 import { ResendemailconfirmationComponent } from './resendemailconfirmation/resendemailconfirmation.component';
 import { ResendemailconfirmationsuccessComponent } from './resendemailconfirmationsuccess/resendemailconfirmationsuccess.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { ChangepasswordComponent } from './profile/changepassword/changepassword.component';
+import { ChangeemailComponent } from './profile/changeemail/changeemail.component';
+import { ChangeemailsuccessComponent } from './profile/changeemailsuccess/changeemailsuccess.component';
+import { ChangeemailsuccesssComponent } from './profile/changeemailsuccesss/changeemailsuccesss.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { ResendemailconfirmationsuccessComponent } from './resendemailconfirmati
     ResetpasswordsuccessComponent,
     ResendemailconfirmationComponent,
     ResendemailconfirmationsuccessComponent,
+    ProfileComponent,
+    ChangepasswordComponent,
+    ChangeemailComponent,
+    ChangeemailsuccessComponent,
+    ChangeemailsuccesssComponent,
   ],
   imports: [CommonModule, AuthRoutingModule, FormsModule, HttpClientModule],
   exports: [

@@ -50,6 +50,7 @@ export class AuthService {
         this.currentUser.role = decodedToken.role;
 
         localStorage.setItem('token', response.token);
+        localStorage.setItem('userid', response.userid);
         this.router.navigate(['/contact']);
         return this.currentUser;
       })
@@ -62,7 +63,9 @@ export class AuthService {
     .pipe(
       map((response: any) => {
         localStorage.removeItem('token');
+        localStorage.removeItem('userid');
         localStorage.setItem('token', response.token);
+        localStorage.setItem('userid', response.userid);
       }));
   }
 
@@ -90,6 +93,7 @@ export class AuthService {
     this.alertService.success('Log out successfully!');
     this.progressService.completeLoading();
     localStorage.removeItem('token');
+    localStorage.removeItem('userid');
     this.router.navigate(['']);
   }
   
@@ -103,4 +107,12 @@ export class AuthService {
   confirmEmail(model: any) {
     return this.http.post(this.baseUrl + 'Identity/confirmemail', model);
   }
+  getuserinformation(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/getinfor', model);
+  }
+  
+  changeemail(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/changeemail', model);
+  }
+
 }

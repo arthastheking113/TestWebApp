@@ -45,6 +45,7 @@ export class ResetpasswordComponent implements OnInit {
           this.alertService.success('Your password successfully is reset');
           this.progressService.completeLoading();
           localStorage.removeItem('token');
+          localStorage.removeItem('userid');
           this.router.navigate(['/resetpasswordsuccess']);
         },
         error: (err: any) => {

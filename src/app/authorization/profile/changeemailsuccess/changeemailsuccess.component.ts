@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 import { ProgressbarService } from 'src/app/shared/services/progressbar.service';
-import { AuthService } from '../resources/auth.service';
-
+import { AuthService } from 'src/app/authorization/resources/auth.service';
 @Component({
-  selector: 'app-confirm-email',
-  templateUrl: './confirm-email.component.html',
-  styleUrls: ['./confirm-email.component.scss'],
+  selector: 'app-changeemailsuccess',
+  templateUrl: './changeemailsuccess.component.html',
+  styles: [
+  ]
 })
-export class ConfirmEmailComponent implements OnInit {
+export class ChangeemailsuccessComponent implements OnInit {
   emailConfirmed: boolean = false;
   urlParams: any = {};
 
@@ -37,7 +37,7 @@ export class ConfirmEmailComponent implements OnInit {
         this.emailConfirmed = true;
         console.log(this.emailConfirmed);
       },
-      (error) => {
+      (error: any) => {
         this.progressBar.setFailure();
         console.log(error);
         this.alertService.danger('Unable to confirm email');

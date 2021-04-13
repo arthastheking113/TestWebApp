@@ -5,6 +5,11 @@ import { ConfirmEmailComponent } from './confirm-email/confirm-email.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ForgotpasswordcheckemailComponent } from './forgotpasswordcheckemail/forgotpasswordcheckemail.component';
 import { LoginComponent } from './login/login.component';
+import { ChangeemailComponent } from './profile/changeemail/changeemail.component';
+import { ChangeemailsuccessComponent } from './profile/changeemailsuccess/changeemailsuccess.component';
+import { ChangeemailsuccesssComponent } from './profile/changeemailsuccesss/changeemailsuccesss.component';
+import { ChangepasswordComponent } from './profile/changepassword/changepassword.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 import { RegistersuccessComponent } from './registersuccess/registersuccess.component';
 import { ResendemailconfirmationComponent } from './resendemailconfirmation/resendemailconfirmation.component';
@@ -24,6 +29,13 @@ const routes: Routes = [
   { path: 'resetpasswordsuccess', component: ResetpasswordsuccessComponent },
   { path: 'resendemailconfirmation', component: ResendemailconfirmationComponent },
   { path: 'resendemailconfirmationsuccess', component: ResendemailconfirmationsuccessComponent },
+  { path: 'account/profile', component: ProfileComponent },
+  { path: 'account/changeemail', component: ChangeemailComponent },
+  { path: 'account/changepassword', component: ChangepasswordComponent },
+  { path: 'account/changeemailsuccess', component: ChangeemailsuccessComponent },
+  { path: 'account/changeemailsuccesss', component: ChangeemailsuccesssComponent },
+
+
 ];
 
 @NgModule({
