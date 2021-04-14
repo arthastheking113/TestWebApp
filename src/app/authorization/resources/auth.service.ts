@@ -21,7 +21,7 @@ const routes: Routes = [
 })
 
 export class AuthService {
-  baseUrl: string = environment.baseUrl;
+  baseUrl: string = 'https://localhost:44370/';
   isLoggedIn:boolean;
   helper = new JwtHelperService();
 

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class SecretService {
-  baseUrl: string = environment.baseUrl;
+  baseUrl: string = 'https://localhost:44370/';
   constructor(private http: HttpClient) {}
 
   managerDeveloperSecrets(): Observable<IResponse> {
