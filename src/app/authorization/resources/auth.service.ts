@@ -21,7 +21,7 @@ const routes: Routes = [
 })
 
 export class AuthService {
-  baseUrl: string = 'https://localhost:44370/';
+  baseUrl: string = 'https://duylanle-contactbook.herokuapp.com/';
   isLoggedIn:boolean;
   helper = new JwtHelperService();
 

@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class SecretService {
-  baseUrl: string = 'https://localhost:44370/';
+  baseUrl: string = 'https://duylanle-contactbook.herokuapp.com/';
   constructor(private http: HttpClient) {}
 
   managerDeveloperSecrets(): Observable<IResponse> {
