@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 export class ContactService {
 
   constructor(private http: HttpClient) { }
-  readonly baseUrl = "https://localhost:44370/api/Contacts";
+  readonly baseUrl = "https://duylanle-contactbook.herokuapp.com/api/Contacts";
   formData:Contact = new Contact();
   list : Contact[];
   postContact(){
