@@ -35,7 +35,7 @@
                              class="form-control" />
                         </div>
                         <br>
-                        <button  type="submit" asp-page-handler="ChangeEmail" class="btn btn-primary">Change email</button>
+                        <button [disabled]="form.invalid"  type="submit" asp-page-handler="ChangeEmail" class="btn btn-primary">Change email</button>
                     </form>
                 </div>
             </div>

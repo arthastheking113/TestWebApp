@@ -111,8 +111,15 @@ export class AuthService {
     return this.http.post(this.baseUrl + 'Identity/getinfor', model);
   }
   
+  changepassword(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/changepassword', model);
+  }
+
   changeemail(model: any) {
     return this.http.post(this.baseUrl + 'Identity/changeemail', model);
+  }
+  changeusername(model: any) {
+    return this.http.post(this.baseUrl + 'Identity/changeusername', model);
   }
 
 }

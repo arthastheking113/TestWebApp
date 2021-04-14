@@ -18,6 +18,18 @@ export class ContactFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(form: NgForm){
+
+    if(this.service.formData.id == 0){
+      this.insertRecord(form);
+    }else{
+      this.updateRecord(form);
+    }
+
+
+   
+  }
+  insertRecord(form: NgForm){
+  
     this.service.postContact().subscribe(
       res =>{
         this.resetForm(form);
@@ -27,8 +39,20 @@ export class ContactFormComponent implements OnInit {
       err =>{console.log(err);}
     );
   }
+
+  updateRecord(form: NgForm){
+    this.service.putContact().subscribe(
+      res =>{
+        this.resetForm(form);
+        this.toastr.info('Updated contact successfully', 'Contact Register');
+        this.service.refeshList();
+      },
+      err =>{console.log(err);}
+    );
+  }
   resetForm(form: NgForm){
     form.form.reset;
     this.service.formData = new Contact();
   }
+  
 }

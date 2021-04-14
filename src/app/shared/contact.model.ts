@@ -13,6 +13,6 @@ export class Contact {
     zipCode:string='';
     company:string='';
     faxNumber:string='';
-    userId:string='';
+    userId:string | null='';
 
 }

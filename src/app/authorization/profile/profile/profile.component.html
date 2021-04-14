@@ -21,16 +21,20 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-6">
-                    <form id="profile-form" method="post">
-            
-                        
+                    <form #form="ngForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label >First Name</label>
-                            <input value="{{firstName}}"  class="form-control" />
+                            <input value="{{firstNamee}}" 
+                            name="firstName" type="text"
+                            [(ngModel)]="submitmodel.firstName" required 
+				#firstName="ngModel" class="form-control" />
                         </div>
                         <div class="form-group">
                             <label >Last Name</label>
-                            <input value="{{lastName}}" class="form-control" />
+                            <input value="{{lastNamee}}" 
+                            name="lastName" type="text"
+                            [(ngModel)]="submitmodel.lastName" required 
+				#lastName="ngModel" class="form-control" class="form-control" />
                         </div>
             
                         <div class="form-group">
@@ -38,7 +42,7 @@
                             <input value="{{email}}" class="form-control" disabled />
                         </div>
                         <br>
-                        <button  type="submit" class="btn btn-primary">Save</button>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Save</button>
                     </form>
                 </div>
             </div>

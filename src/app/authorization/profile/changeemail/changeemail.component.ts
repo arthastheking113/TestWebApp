@@ -26,7 +26,11 @@ export class ChangeemailComponent implements OnInit {
     private progressService: ProgressbarService,
     private alertService: AlertService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router) {
+      if (!authService.isLoggedIn) {
+        router.navigate(['/']);
+      }
+     }
 
   ngOnInit(): void {
     this.getuserinformation();

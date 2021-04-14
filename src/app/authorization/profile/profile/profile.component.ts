@@ -12,22 +12,28 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  firstName:string;
-  lastName:string;
-  email:string;
+  
   getmodel: any = {
     userid:null,
   };
   submitmodel: any = {
-    userid:null,
+    userId:null,
+    firstName:null,
+    lastName:null
   };
+
+  firstNamee:string;
+  lastNamee:string;
+  email:string;
   constructor(
     private route: ActivatedRoute,
     private progressService: ProgressbarService,
     private alertService: AlertService,
     private authService: AuthService,
     private router: Router
-  ) { }
+  ) {   if (!authService.isLoggedIn) {
+    router.navigate(['/']);
+  } }
 
   ngOnInit(): void {
     this.getuserinformation();
@@ -36,8 +42,8 @@ export class ProfileComponent implements OnInit {
     this.getmodel.userid = localStorage.getItem('userid');
     const getinforObserver = {
       next: (x: any) => {
-        this.firstName = x.firstName;
-        this.lastName = x.lastName;
+        this.firstNamee = x.firstName;
+        this.lastNamee = x.lastName;
         this.email = x.email;
        
       },
@@ -49,4 +55,26 @@ export class ProfileComponent implements OnInit {
     };
     this.authService.getuserinformation(this.getmodel).subscribe(getinforObserver);
   }
+
+  onSubmit(){
+    this.submitmodel.userId = localStorage.getItem('userid');
+    this.alertService.info('Checking information');
+    this.progressService.startLoading();
+
+    const changeusernameObserver = {
+      next: (x: any) => {
+        this.progressService.setSuccess();
+        this.alertService.success('Change Name Successfully');
+        this.progressService.completeLoading();
+        this.getuserinformation();
+      },
+      error: (err: any) => {
+        console.log(err);
+        this.alertService.danger(err.error);
+        this.progressService.completeLoading();
+      },
+    };
+    this.authService.changeusername(this.submitmodel).subscribe(changeusernameObserver);
+  }
+
 }
